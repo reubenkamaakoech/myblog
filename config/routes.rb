@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
+  resources :comments
+  devise_for :users, controllers: {
+    sessions: 'user/sessions', 
+    registrations: 'user/registrations'
+  }
+
   resources :posts
   root "posts#index"
   get 'home/index'

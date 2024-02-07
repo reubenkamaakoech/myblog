@@ -14,10 +14,11 @@
   <body>
     <div>
       <%= render "home/navbar"%>
-      <% render "home/sidebar"%>
+      <%= render "home/users"%><br/>
+      <%= render "home/alerts"%>
+      <%= render "home/sidebar"%>
     </div>
-    <div class="container">
-      <%= render "home/alerts"%> 
+    <div class="container"> 
       <%= yield %>
     </div>
   </body>

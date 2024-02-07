@@ -1,6 +1,7 @@
-<h1>Posts</h1>
-
-<%= link_to "New post", new_post_path, class:"btn btn-outline-success btn-sm" %>
+<div>
+  <h1>Posts</h1> 
+  <%= link_to "New post", new_post_path, class:"btn btn-outline-success btn-sm" %>
+</div><br/>
 
 <div id="posts">
   <% @posts.each do |post| %>

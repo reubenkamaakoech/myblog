@@ -1,22 +1,22 @@
 .wrapper .sidebar{
-    background: rgb(98, 181, 184);
+    background: rgb(225, 229, 230);
     position: fixed;
-    top: 56px;
+    top: 0;
     left: 0;
-    width: 225px;
+    width: 230px;
     height: 100%;
     padding: 20px 0;
     transition: all 0.5s ease;
 }
 
 .wrapper .sidebar a{
-    color: rgba(253, 251, 251, 0.705);
+    color: black;
     text-decoration: none;
 }
 
 .wrapper .sidebar i{
     font-size: 20px;
-    color: rgba(253, 251, 251, 0.705);
+    color: rgba(253, 251, 251, 0.884);
 }
 
 .wrapper .sidebar i:hover{
@@ -59,7 +59,7 @@
 
 /* Change background on mouse-over */
 .wrapper .sidebar ul li a:hover{
-    color: white;
+    color: rgb(109, 95, 95);
 }
 
 /* sub-menu */

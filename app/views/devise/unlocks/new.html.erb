@@ -5,11 +5,16 @@
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'form-control', placeholder:'Email' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :username %><br />
+    <%= f.text_field :username, autofocus: true, autocomplete: "username", class:'form-control', placeholder:'Username' %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Resend unlock instructions" %>
+    <%= f.submit "Resend unlock instructions", class:'btn btn-success btn-sm' %>
   </div>
 <% end %>
 

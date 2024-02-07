@@ -22,6 +22,12 @@
   </div><br/>
 
   <div>
+    <% if current_user %>
+      <%= form.number_field :user_id, id: :post_user_id, class:"form-control", value: current_user.id, type: :hidden %>
+    <% end %>
+  </div><br/>
+
+  <div>
     <%= form.submit nil, class:"btn btn-outline-success btn-sm" %>
   </div>
 <% end %>
