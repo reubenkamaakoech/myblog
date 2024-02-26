@@ -3,8 +3,16 @@
     <strong><i><h4><%= post.title %></h4></i></strong>
   </p>
 
+  <p class="red">
+    <i><%= post.category.name %></i>
+  </p>
+
   <p>
     <%=h truncate(post.content, :length => 250) %>
+  </p>
+  
+  <p>
+    <%= post.comments.count %> Comments
   </p>
 
 </div>

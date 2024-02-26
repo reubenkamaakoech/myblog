@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
+  resources :categories
+  resources :replies
   resources :comments
   devise_for :users, controllers: {
     sessions: 'user/sessions', 
     registrations: 'user/registrations'
   }
 
-  resources :posts
+  resources :posts do
+     resources:comments 
+  end
   root "posts#index"
   get 'home/index'
   get 'home/about'

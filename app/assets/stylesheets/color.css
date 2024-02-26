@@ -1,0 +1,35 @@
+.black {
+    color: black;
+}
+
+ .green {
+    color: rgb(19, 170, 19);
+}
+
+.red {
+    color: red;
+}
+
+.purple {
+    color: purple;
+}
+
+.blue {
+    color: blue;
+}
+
+.blueviolet {
+    color: blueviolet;
+}
+
+.yellow {
+    color: yellow;
+}
+
+.yellowgreen {
+    color: yellowgreen;
+}
+
+.body {
+    background-color: rgb(0, 255, 234);
+  }

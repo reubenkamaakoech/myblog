@@ -21,11 +21,18 @@
     <%= form.text_area :content, class:"form-control" %>
   </div><br/>
 
+   <div>
+    <strong><%= form.label :category_id, style: "display: block" %></strong>
+    <%= form.collection_select(:category_id, Category.all, :id, :name, {prompt:"-Select-"}, {class:"form-control"}) %>
+  </div><br/>
+
   <div>
     <% if current_user %>
       <%= form.number_field :user_id, id: :post_user_id, class:"form-control", value: current_user.id, type: :hidden %>
     <% end %>
   </div><br/>
+
+  <%= render "comments/form", comment: @comment %>
 
   <div>
     <%= form.submit nil, class:"btn btn-outline-success btn-sm" %>

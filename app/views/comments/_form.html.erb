@@ -9,20 +9,23 @@
         <% end %>
       </ul>
     </div>
-  <% end %>
-
-  <div> 
-        <% if current_user %>
-      <%= form.number_field :user_id, id: :post_user_id, class:"form-control", value: current_user.id %>
-    <% end %>
-  </div>
+  <% end %><br/>
 
   <div>
-    <%= form.label :content, style: "display: block" %>
     <%= form.text_area :content %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.hidden_field :post_id %>
+  </div>
+
+  <div>
+    <% if user_signed_in? %>
+    <%= form.hidden_field :user_id, id: :comment_user_id, class:"form-control", value: current_user.id %>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit nil, class:"btn btn-outline-success btn-sm" %>
   </div>
 <% end %>

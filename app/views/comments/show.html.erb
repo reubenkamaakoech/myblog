@@ -1,7 +1,8 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @comment %>
-
+<strong>Reply</strong>
+<%= render @comment.replies.includes(:user) %>
 <div>
   <%= link_to "Edit this comment", edit_comment_path(@comment) %> |
   <%= link_to "Back to comments", comments_path %>
