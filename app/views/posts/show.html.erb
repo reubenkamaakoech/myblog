@@ -5,23 +5,7 @@
   <p>
     <%= @post.content %>
   </p>
-   
-   <p>
-      <strong>Comments</strong>
-   </p>
-
-  <p>
-    <%= render @post.comments.includes(:user).order(id: :desc) %>
-  </p>
   
-  
-  <p>
-    <% @post.comments.each do |comment| %>
-    <% comment.content, placeholder="Leave Your Comment" %>
-    <% end %>
-
-    <%= render "comments/form", comment: @comment %>
-  </p>
 
 
 <div>

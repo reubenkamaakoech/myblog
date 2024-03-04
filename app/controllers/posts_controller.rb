@@ -9,18 +9,18 @@ class PostsController < ApplicationController
 
   # GET /posts/1 or /posts/1.json
   def show
-    @comment = @post.comments.build
+    
   end
 
   # GET /posts/new
   def new
     @post = Post.new
-    @comment = @post.comments.build
+    
   end
 
   # GET /posts/1/edit
   def edit
-    @comment = @post.comments.build
+    
   end
 
   # POST /posts or /posts.json
@@ -69,6 +69,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :content, :user_id, :category_id, comments_attributes: Comment.attribute_contents.map(&:to_sym).push(:_destroy))
+      params.require(:post).permit(:title, :content, :user_id, :category_id)
     end
 end

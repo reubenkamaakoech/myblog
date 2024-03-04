@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   resources :categories
-  resources :replies
-  resources :comments
   devise_for :users, controllers: {
     sessions: 'user/sessions', 
     registrations: 'user/registrations'
