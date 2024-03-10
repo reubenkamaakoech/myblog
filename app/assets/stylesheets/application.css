@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
-
+ 
  body {
    padding-left: 230px;
    padding-right: 0;

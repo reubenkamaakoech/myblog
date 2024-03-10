@@ -1,9 +1,10 @@
 <div class="post">
   <p class="field">
     <strong><i><h4><%= post.title %></h4></i></strong>
+    <i><%= time_ago_in_words(post.created_at)%></i>
   </p>
 
-  <p class="red">
+  <p class="red hidden">
     <i><%= post.category.name %></i>
   </p>
 

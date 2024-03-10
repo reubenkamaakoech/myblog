@@ -1,18 +1,35 @@
-<p>
-  <strong><i><h4><%= @post.title %></h4></i></strong>
-  </p>
 
-  <p>
-    <%= @post.content %>
-  </p>
+    <h1><%= @post.title %></h1>
+    <hr >
+    <div class="my-4">
+      <%= simple_format(@post.content) %>
+      <i><%= time_ago_in_words(@post.created_at)%></i>
+    </div>
+    <div>
+      <%= link_to "Edit", edit_post_path(@post), class: 'btn btn-warning btn-sm' %> |
+      <%= link_to "Back", posts_path, class: 'btn btn-primary btn-sm' %><br/><br/>
+      <%= button_to "Delete", @post, method: :delete, class: 'btn btn-danger btn-sm' %>
+  </div><br/><br/>
+
+
+
+    <strong><p class="font-weight-bold">Comments</p></strong>
+    <%= form_with(model: [@post, @post.comments.build]) do |f| %>
+      <div class="form-group">
+        <%= f.text_area :body, class: 'form-control', placeholder:'New Comment' %>
+        <%= f.number_field :post_id, class: 'form-control', type: :hidden %>
+        <% if current_user %>
+        <%= f.number_field :user_id, id: :comment_user_id, class:"form-control", value: current_user.id, type: :hidden %> 
+        <% end %>
+      </div>
+      <%= f.submit 'Submit', class: 'btn btn-primary btn-sm' %>
+    <% end %><br/>
   
 
+<%= render @post.comments%>
 
-<div>
-  <%= link_to "Edit", edit_post_path(@post), class:"btn btn-outline-warning btn-sm" %> |
-  <%= link_to "Back", posts_path, class:"btn btn-outline-primary btn-sm" %><br/><br/> 
-  <%= link_to "Delete", @post, data: { turbo_method: "delete", turbo_confirm: "Are you sure?"}, class:"btn btn-danger btn-sm" %>
-</div>
+
+
 
 
 
