@@ -1,16 +1,23 @@
 <div>
-  <h1>Posts</h1> 
+  <h1></h1> 
   <%= link_to "New post", new_post_path, class:"btn btn-outline-success btn-sm" %>
+   <hr>
 </div><br/>
 
 <div id="posts">
   <% @posts.each do |post| %>
     <%= render post %>
-    
-    <p>
+   
+    <div>
       <%= link_to "Read More...", post, class:"btn btn-outline-primary btn-sm" %>
-    </p>
-  <% end %>
+    </div>
+    <div>
+      <%= pluralize(post.comments.count, 'Comment') %>
+       <hr>
+      <% end %>
+    </div>
+    
 </div>
+
 
 
